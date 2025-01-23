@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>                               
+        <meta charset="UTF-8">           
+        <meta name="description" content="台灣監督企業青年行動的官網" />    
+        <meta name="author" content="haku" />              
+        <meta name="keywords" content="勞工權益,台監青,台灣監督企業青年行動,勞動部,中鋼,工學聯合,社會運動" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="logo.jpg" type="image/jpg">
+        <title>台灣監督企業青年行動</title>              
+
+        <style>
+            body {
+                overflow-x: hidden; 
+                margin: 0; 
+            }           
+            html{                                       
+                -webkit-text-size-adjust:100%;
+            }
+            .container {
+                display: flex;
+                width: 100%;  
+            }
+            .left {
+                flex: 1; 
+                max-width: 50%; 
+            }
+            .right {
+                flex: 1; 
+                max-width: 50%;
+            }
+            .home-link{
+                position: relative;
+                top: 1px;
+                width: 10%;
+                left:200px;
+                z-index:1000;                  
+                display:block;  
+                cursor:pointer;
+            }
+            .button1{
+                display:inline-block;
+                position: relative;
+                top:40px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
+                border-radius: 10px;
+            }
+            .button1:hover{
+                background-color:gray;
+                color:black;
+                cursor:pointer;
+            }
+            .outside{                       
+                position:relative;
+                width:100%;
+                height: 440px;
+                margin:0 auto;
+                border:none;
+                overflow: hidden;
+            }
+            .img{
+                width: 100%; 
+                height: 500px;
+            }
+            .pic{
+                display: none;
+            }
+            .serial{
+                position:absolute;
+                top:10px;
+                left:10px;
+                background-color:transparent;
+            }
+            .prev{
+                cursor:pointer;
+                position:absolute;
+                left:5px;
+                top:50%;
+                margin-top:-20px;
+                background-color:rgba(0,0,0,0.1);
+                color:white;
+                transition:background-color 0.5s;
+            }
+            .next{
+                cursor:pointer;
+                position:absolute;
+                right:5px;
+                top:50%;
+                margin-top:-20px;
+                background-color:rgba(0,0,0,0.1);
+                color:white;
+                transition:background-color 0.5s;
+            }
+            .prev:hover,next:hover{
+                background-color:transparent;
+            }
+            .logo{
+                height: 120px !important;
+            }
+            .section1{
+                position:relative;
+                background-color:#DCDCDC;
+                top: -31px;
+                height:400px;
+            }
+            .bigtext{
+                font-size: 30px;  
+                font-weight: bold;
+                padding-left: 500px;
+                padding-top: 85px; 
+
+            }
+            .normaltext{
+                font-size: 20px;
+                padding-left: 448px;
+            }
+            .normaltext1{
+                font-size: 20px;
+                padding-left: 250px;
+            }
+            .section2{
+                position:relative;
+                background-color:#FFFFFF;
+                height:400px;
+            }
+            .movetoright{
+                padding-left: 260px;
+            }
+            .textmove1{
+                position:relative;
+                padding-left: 245px;
+                font-size: 30px;  
+                font-weight: bold;
+                top:-20px;
+            }
+            .textmove2{
+                position:relative;
+                padding-left: 215px;
+                font-size: 30px;  
+                font-weight: bold;
+                top:-20px;
+            }
+            .section3{
+                position:relative;
+                top:-10px;
+                background-color:#DCDCDC;
+                height:800px;
+            }
+            .big{
+                position:relative;
+                font-size: 50px;  
+                top:15px;
+                padding-left: 100px;
+            }
+            .morearticle{
+                position: relative;
+                top:90px;
+                left:550px;
+                padding:5px 10px;
+                margin:5px;
+                font-size:15px;
+                font-weight:bold;
+                background-color:#DCDCDC;
+                color:black;
+                border-radius: 1px;
+            }
+            .morearticle:hover{
+                background-color:gray;
+                color:#DCDCDC;
+                cursor:pointer;
+            }
+            .p1{
+                position: relative;
+                left:100px;
+                font-size:20px;
+            }
+            .readmore{
+                position: relative;
+                top:-10px;
+                margin:5px;
+                font-size:15px;
+                padding:5px 10px;
+                font-weight:bold;
+                background-color:#DCDCDC;
+                color:black;
+                border-radius: 1px;
+            }
+            .readmore:hover{
+                background-color:gray;
+                color:#DCDCDC;
+                cursor:pointer;
+            }
+            .section4{
+                position:relative;
+                top: -40px;
+                background-color:#000000;
+                padding:20px;
+                height:auto;
+            }
+            .footer {                                     
+                display: flex;
+                padding: 20px 50px;
+                border-top: 1px solid #666;             /* black line */
+                min-width: 800px;
+            }
+            .footer-left {
+                flex: 1 1 40%;          /* constant usage | the left account for 40% */
+            }
+            .footer-left iframe {         
+                max-width: 400px;       /*the frame of fb*/
+                height: 500px;
+                border: none;
+            }
+            .footer-right {
+                flex: 1 1 50%; 
+                padding-left: 20px;
+                color: #ffffff; 
+                background-color: #000000; 
+                overflow: visible;          /* prevent the content be cut*/
+            }
+            .social-icons {
+                margin-top: 20px;
+            }
+            .social-icons a {      
+                display: inline-block;
+                margin-right: 10px;
+                color: #fff;
+                text-decoration: none;  /* remove downline */
+                font-size: 20px;
+            }
+            .copyright {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 14px;
+                color: #999;
+            }
+            a {
+                text-decoration: none;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <script>                           
+            var pic,now=0,num=4;
+            window.onload=function(){
+                pics=document.getElementsByClassName("pic");
+                show(now);
+            }
+            function show(i){
+                now=i;
+                for(var k=0;k<pics.length;k++){
+                    pics[k].style.display="none";
+                }
+                pics[now].style.display="block";
+            }
+            function next(){
+                now+=1;
+                if(now>3)
+                    now=0;
+                show(now);
+            }
+            function prev(){
+                now-=1;
+                if(now<0)
+                    now=num-1;
+                show(now);
+            }
+        </script>
+    </head>
+    <body>                              
+        <div class="container">
+            <div class="left">
+                <a href="主頁.html" class="home-link">                
+                    <img src="logo.jpg" class="logo"/>
+                </a>
+            </div>
+            <div class="right">
+                <a href="關於我們.html">
+                    <button class="button1">關於我們</button>
+                </a>
+                <a href="文章.html">
+                    <button class="button1">文章</button>
+                </a>
+                <a href="行動.html">
+                    <button class="button1">行動</button>
+                </a>               
+            </div>
+        </div>
+                                  
+        <div class="outside">                 
+            <div class="pic">
+                <div class="serial">1/4</div>
+                <img class="img" src="投影片1.jpg">
+            </div>
+            <div class="pic">
+                <div class="serial">2/4</div>
+                <img class="img" src="投影片2.jpg">
+            </div>
+            <div class="pic">
+                <div class="serial">3/4</div>
+                <img class="img" src="投影片3.jpg">
+            </div>
+            <div class="pic">
+                <div class="serial">4/4</div>
+                <img class="img" src="投影片4.jpg">
+            </div>
+            <div class="prev" onclick="prev()">&lt</div>
+            <div class="next" onclick="next()">&gt</div>
+        </div>
+
+        <div class="section1">
+            <p class="bigtext">我們是台灣監督企業青年行動<br><br></p>
+            <p class="normaltext">我們是來自各個大學的學生，在各個學校舉辦宣講、聲援，</p>
+            <p class="normaltext1">讓更多學生能夠瞭解到台灣的勞資權力不對等、勞工受壓迫和被壓榨的情況，改變社會現狀，改變不合理的制度。</p>
+        </div>
+
+        <div class="section2">
+            <div class="container">
+                <div class="left">
+                    <div class="movetoright">
+                        <img src="協商.png" height="250" width="300"/>
+                    </div>
+                    <div class="textmove1">
+                        <p>協商取得合法薪資與福利</p>
+                    </div> 
+                </div>
+                <div class="right">
+                    <div class="movetoright">
+                        <img src="勞權.png" height="250" width="300"/>
+                    </div>
+                    <div class="textmove2">
+                        <p>各大專院校宣講實現工學聯合</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <img src="抗爭.jpg" height=auto width=100%/>
+
+        <div class="section3">
+            <div class="container">
+                <div class="left">
+                    <div class="big">
+                        <p>相關文章</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <a href="文章.html">
+                        <button class="morearticle">更多文章</button>
+                    </a>
+                </div>   
+            </div>
+            <div class="p1">
+                <img src="何.png" height="400" width=auto/>
+                <p>文章|觀點投書：與其一再迴避職責，<br>
+                何佩珊部長何不知所進退？<br><br>
+                2024/11/18</p>
+                <div>
+                    <a href="文章1.html">
+                        <button class="readmore">閱讀更多</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section4">
+            <div class="footer">
+                <div class="footer-left">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/profile.php?id=61567452682767" 
+                        data-width="340" 
+                        data-height="300" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <h2>聯絡我們</h2>
+                    <p>台灣監督企業青年行動</p>
+                    <p>電話:0900560027</p>
+                    <p>郵件：taiwanjianduqiyeqingnianxingdo@gmail.com</p>
+        
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567452682767" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/tyi_cropwatch/" target="_blank">IG</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="copyright">
+                Copyright © 台灣監督企業青年行動
+            </div>
+        </div>                                              <!--JavaScript (Facebook attachment)-->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0">
+        </script>
+    </body>
+</html>
