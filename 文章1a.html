@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>                               
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <link rel="icon" href="logo.jpg" type="image/jpg">     
+        <title>文章|觀點投書：與其一再迴避職責何佩珊部長何不知所進退？</title>
+        <style>
+            body {
+                overflow-x: hidden; 
+                margin: 0; 
+            }
+            html{                                       
+                -webkit-text-size-adjust:100%;
+            }
+            .container {
+                display: flex;
+                width: 100%;  
+            }
+            .left {
+                flex: 1; 
+                max-width: 50%; 
+            }
+            .right {
+                flex: 1; 
+                max-width: 50%;
+            }
+            .home-link{
+                position: relative;
+                top: 1px;
+                left:200px;
+                width: 50%;
+                z-index:1000;                  
+                display:block;  
+                cursor:pointer;
+            }
+            .logo{
+                height: 120px !important;
+            }
+            .button1{
+                display:inline-block;
+                position: relative;
+                top:40px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
+                border-radius: 10px;
+            }
+            .button1:hover{
+                background-color:gray;
+                color:black;
+                cursor:pointer;
+            }
+            .section-1{
+                position:relative;
+                top: -40px;
+                background-color:#000000;
+                padding:20px;
+                height:auto;
+            }
+            .footer {                                     
+                display: flex;
+                padding: 20px 50px;
+                border-top: 1px solid #666;  
+                min-width: 800px;
+            }
+            .footer-left {
+                flex: 1 1 40%;          
+            }
+            .footer-left iframe {         
+                max-width: 400px;       
+                height: 400px;
+                border: none;
+            }
+            .footer-right {
+                flex: 1 1 50%; 
+                padding-left: 20px;
+                color: #ffffff; 
+                background-color: #000000; 
+                overflow: visible; 
+            }
+            .social-icons {
+                margin-top: 20px;
+            }
+            .social-icons a {     
+                display: inline-block;
+                margin-right: 10px;
+                color: #fff;
+                text-decoration: none;  
+                font-size: 20px;
+            }
+            .copyright {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 14px;
+                color: #999;
+            }
+            .section1{
+                position:relative;
+                top:-3px;
+                height:2850px;
+                background:#DCDCDC;
+                
+            }
+            .center{
+                position: relative;
+                left: 25%;
+                text-align: left;
+                padding-top: 55px; 
+                width: 800px;
+            }
+            .center p {
+                
+                line-height: 1.5;
+                letter-spacing: 2px; 
+            }
+            .center img {
+                position: relative;
+                top: -70px;
+                left:105px;
+                margin-top: 1px; 
+                height:600px;
+                width:570px;
+            }
+            .big{
+                font-size:40px;
+                font-weight:bold;
+            }
+            .small{
+                font-size:17px;
+            }
+            .fb-icon {
+                width: 35px;
+                height: 35px;
+                position: relative;
+                top: -30px; 
+                left:630px;
+                background-color:#DCDCDC;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            .fb-icon:hover {
+                transform: scale(1.1);                                  /* magnify */
+                box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+            }
+            .fb-icon img { 
+                position: relative;
+                top: 1px; 
+                left:1px;
+                width: 30px;
+                height: 30px;
+            }
+            .ig-icon {
+                width: 35px;
+                height: 35px;
+                position: relative;
+                top: -65px; 
+                left: 690px;
+                background-color:#DCDCDC; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            .ig-icon:hover {
+                transform: scale(1.1); 
+                box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+            }
+            .ig-icon img {
+                position: relative;
+                top: 1px; 
+                left:1px;
+                width: 30px;
+                height: 30px;
+            }
+            .line-icon {
+                width: 35px;
+                height: 35px;
+                position: relative;
+                top: -100px; 
+                left: 750px;
+                background-color:#DCDCDC; 
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            .line-icon:hover {
+                transform: scale(1.1); 
+                box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+            }
+            .line-icon img {
+                position: relative;
+                top: 1px; 
+                left:1px;
+                width: 30px;
+                height: 30px;
+            }
+            .top{
+                position:relative;
+                top: -40px;
+            }
+            .button2{
+                position: relative;
+                left: 270px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:#DCDCDC;
+                color:#000;
+                border-radius: 10px;
+            }
+            .button2:hover{
+                background-color:#000;
+                color:#DCDCDC;
+                cursor:pointer;
+            }
+            a {
+                text-decoration: none;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>                               
+        <div class="container">
+            <div class="left">
+                <a href="主頁.html" class="home-link">                
+                    <img src="logo.jpg" class="logo"/>
+                </a>
+            </div>
+            <div class="right">
+                <a href="關於我們.html">
+                    <button class="button1">關於我們</button>
+                </a>
+                <a href="文章.html">
+                    <button class="button1">文章</button>
+                </a>
+                <a href="行動.html">
+                    <button class="button1">行動</button>
+                </a>               
+            </div>
+        </div>
+
+        <div class="section1">
+            <div class="center">
+                <p> 
+                    <div class="big">
+                        文章|觀點投書：與其一再迴避職責何佩珊部長何不知所進退？
+                    </div>
+                    <br><br>
+                    <div class="small">
+                        2024/11/18 文章
+                    </div>
+                </p>
+                <a class="fb-icon" 
+                    href="https://www.facebook.com/sharer/sharer.php?u=https://www.storm.mg/article/5273823" 
+                    target="_blank" 
+                    title="分享至Facebook">
+                    <img src="fb.icon.png" alt="Facebook">
+                </a>
+                <a class="ig-icon" 
+                    href="https://www.instagram.com/p/https://www.instagram.com/p/DCiBwPsT91O/" 
+                    target="_blank" 
+                    title="分享至IG">
+                    <img src="ig.icon.jpg" alt="IG">
+                </a>
+                <a href="https://social-plugins.line.me/lineit/share?url=https://www.instagram.com/p/https://www.storm.mg/article/5273823/" 
+                   target="_blank" 
+                   class="line-icon" 
+                   title="分享至 LINE">
+                   <img src="line.icon.png" alt="Line">
+                </a>
+                <img src="何.png">
+                <div class="top">
+                    <p>近日以來，身為執掌、管理我國最大勞動相關政策與權利政府機關作為職責的勞動部部長，居然就如何認定何謂「低薪」的部分，在立法院質詢時說出了與自身政策矛盾的說法！<br><br>隨著2023年通過了《最低工資法》，今年九月在由勞動部長何佩珊擔任召集人的最低工資審議會議中，做出了從明年起最低工資僅調漲4%至每月2萬8590元的結論。然而，何佩珊部長在立院面對林淑芬委員備詢時，主動表示根據經濟合作暨發展組織（OECD）定義，低薪為「總薪資中位數的三分之二」，以台灣勞工薪資中位數4萬6千元的三分之二來計算，月薪3萬1000元的勞工即為「低薪」。<br><br>但讓我們年輕人感到質疑更無法理解的是，既然何部長也首次在國會坦言：目前台灣「低薪」的標準應為3萬1000元，然而，為何在日前調漲最低薪資過程中，卻看不見勞動部以此幫台灣勞工據理力爭，反而在會議僅做出微幅調漲後出面「感謝」雇主團體願意「照顧」勞工？<br><br>這實在讓我們不禁懷疑，何部長是否真有意識到自己所擔任的，乃是肩負起為台灣近千萬廣大勞工權益把關職責的「勞動部部長」？讓我們感到更離譜的是，同樣在立法院，面對涂權吉委員在衛環委員會中，針對最近有關由國家所經營的中鋼運通公司，出現了包括惡意逼退超過300名台灣船員、無預警中斷船員勞健保、惡意侵害勞工權益所引發的持續抗爭，對勞動部的質詢中，何部長再次展現出完全出缺乏對於自身權責，以及法律基本常識的理解！<br><br>一、部長刻意推卸責任，放任讓勞工成為勞資爭議中最大後害者<br>何部長在答詢時，針對國營的中鋼運通公司逼退超過300名台灣船員等重大勞資爭議，猶如跳針一般，一下以司法訴訟程序尚未終結為藉口，一下推給已請交通部航港局協助云云，講了半天，何部長從頭到尾不斷迴避的，卻是勞動部的職責！（相關報導：公務員疑遭霸凌輕生！他揭分署長「2年內逼走17名主管」　怒批勞發署「這1處置」沒作為｜更多文章）就機關自身權責執掌而論，按《勞資爭議處理法》第4條明文規定：「本法所稱主管機關：在中央為勞動部」。<br><br>此外，在質詢時，勞保局針對國營的中鋼運通所雇用的台灣船員僱傭契約屬於「定期／不定期」的認定，所引發的爭議回復之函釋明確指出，在勞資爭議調處的相關事件，中央主管機關就是勞動部！再者，按《勞動基準法》第4條之規定，也已經指出有關勞動基準法相關規定事項主管機關就是勞動部。這也是2021年勞動部針對外送員與平台業者之間的關係是否屬於僱傭契約的爭議時，即便法院內的爭訟尚未終結，卻得以主動會同臺北市及桃園市勞動檢查處，直接明確認定兩家外送平台業者與外送員之間為「僱傭關係」。<br><br>而此次何部長被問到的中鋼運通公司與其船員僱傭契約性質的爭議，所涉的是同法第9條「定期契約／不定期契約」的認定，本來就是勞動部應該依法認定的職責。與交通部或《船員法》內容根本無關。這在涂委員發函交通部航港局針對此勞資爭議事件進行解釋的回函當中，交通部亦已明確指出認定契約性質不屬於交通部的執掌範圍。何部長對於自身業務職掌的重要法律常識居然顯得如此缺乏認識，實在是令人懷疑何部長做為中央主管勞動事務機關部會首長的基本能力！<br><br>二、請部長重新正視自身專業，或是引咎下台<br>在航運業中，各大海運公司長期以來使用定期契約欺壓長期在海上進行高強度工作的船員勞工們。在契約性質認定上，則以扭曲國際海事勞工公約的方式，認定每一次派遣船員的契約皆為定期契約，使在岸的船員沒有勞健保以及相關勞動權益的保障，有如這些海運公司免洗筷一般。船員們在海上進行高強度工作後，回到了岸上，詎料等待他們的不是溫暖的家，而是無法期待何時結束的在岸候船期，以及無法獲得勞動權益保障的高度恐懼感。目前船員爭取適用不定期契約之行動，已獲得台灣廣大工會界之支持，包括近140家基層企業工會以及多個縣市總工會與聯合會的聯署支持，已然是台灣廣大勞工族群目前關注焦點之所在！<br><br>在此，「台灣監督企業青年行動」呼籲何部長：請重拾對自身專業和職責應有的知識與責任吧！不要再逃避勞動部作為勞動法令中央主管機關的權責，為船員做出真正符合現實與契約正義的認定。否則，作為一個青年團體，我們實在難以信賴一個推諉卸責，缺乏常識的部長，以及如此無視人民基本權利的政府機關，能夠在青年學子不久即將投入職場工作時，為我們以及全體勞工把關權益，更無法相信這樣的部長，在勞工勞動權利受到侵害時，能夠負起自身的權責，為廣大的勞工朋友們爭取應有的權利。<br><br>作者:陳柏勛<br><br>連結:<a href="https://www.storm.mg/article/5273823" target="_blank">https://www.storm.mg/article/5273823</a></p>
+                </div>
+                <a href="文章.html">
+                    <button class="button2">更多文章</button>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="section-1">
+            <div class="footer">
+                <div class="footer-left">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/profile.php?id=61567452682767" 
+                        data-width="340" 
+                        data-height="300" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <h2>聯絡我們</h2>
+                    <p>台灣監督企業青年行動</p>
+                    <p>電話:0900560027</p>
+                    <p>郵件：taiwanjianduqiyeqingnianxingdo@gmail.com</p>
+        
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567452682767" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/tyi_cropwatch/" target="_blank">IG</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="copyright">
+                Copyright © 台灣監督企業青年行動
+            </div>
+        </div>                                              
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0">
+        </script>
+    </body>
+</html>

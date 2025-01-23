@@ -1,0 +1,2627 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>                               
+        <meta charset="UTF-8">           
+        <meta name="description" content="台灣監督企業青年行動的官網" />    
+        <meta name="author" content="haku" />              
+        <meta name="keywords" content="勞權,台監青," />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="logo.jpg" type="image/jpg">
+        <title>台灣監督企業青年行動</title>              
+
+        <style>            
+            html{                                       
+                -webkit-text-size-adjust:100%;
+            }
+            .container {
+                display: flex;
+                width: 100%;  
+            }
+            .left {
+                flex: 1; 
+                max-width: 50%; 
+            }
+            .right {
+                flex: 1; 
+                max-width: 50%;
+            }
+            #home-link{
+                position: relative;
+                top: 1px;
+                width: 10%;
+                left:200px;
+                z-index:1000;                  
+                display:block;  
+                cursor:pointer;
+            }
+            .button1{
+                display:inline-block;
+                position: relative;
+                top:40px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
+                border-radius: 10px;
+            }
+            .button1:hover{
+                background-color:gray;
+                color:black;
+                cursor:pointer;
+            }
+            .outside{                       
+                position:relative;
+                width:100%;
+                height: 440px;
+                margin:0 auto;
+                border:none;
+                overflow: hidden;
+            }
+            .img{
+                width: 100%; 
+                height: 500px;
+            }
+            .pic{
+                display: none;
+            }
+            .serial{
+                position:absolute;
+                top:10px;
+                left:10px;
+                background-color:transparent;
+            }
+            .prev{
+                cursor:pointer;
+                position:absolute;
+                left:5px;
+                top:50%;
+                margin-top:-20px;
+                background-color:rgba(0,0,0,0.1);
+                color:white;
+                transition:background-color 0.5s;
+            }
+            .next{
+                cursor:pointer;
+                position:absolute;
+                right:5px;
+                top:50%;
+                margin-top:-20px;
+                background-color:rgba(0,0,0,0.1);
+                color:white;
+                transition:background-color 0.5s;
+            }
+            .prev:hover,next:hover{
+                background-color:transparent;
+            }
+            .logo{
+                height: 120px !important;
+            }
+            #section1{
+                position:relative;
+                background-color:#DCDCDC;
+                top: -31px;
+                height:400px;
+            }
+            .bigtext{
+                font-size: 30px;  
+                font-weight: bold;
+                padding-left: 500px;
+                padding-top: 85px; 
+
+            }
+            .normaltext{
+                font-size: 20px;
+                padding-left: 448px;
+            }
+            .normaltext1{
+                font-size: 20px;
+                padding-left: 250px;
+            }
+            #section2{
+                position:relative;
+                background-color:#FFFFFF;
+                height:400px;
+            }
+            .movetoright{
+                padding-left: 260px;
+            }
+            #textmove1{
+                position:relative;
+                padding-left: 245px;
+                font-size: 30px;  
+                font-weight: bold;
+                top:-20px;
+            }
+            #textmove2{
+                position:relative;
+                padding-left: 215px;
+                font-size: 30px;  
+                font-weight: bold;
+                top:-50px;
+            }
+            .section3{
+                position:relative;
+                top:-10px;
+                background-color:#DCDCDC;
+                height:800px;
+            }
+            #big{
+                position:relative;
+                font-size: 50px;  
+                top:15px;
+                padding-left: 100px;
+            }
+            #morearticle{
+                position: relative;
+                top:90px;
+                left:550px;
+                padding:5px 10px;
+                margin:5px;
+                font-size:15px;
+                font-weight:bold;
+                background-color:#DCDCDC;
+                color:black;
+                border-radius: 1px;
+            }
+            #morearticle:hover{
+                background-color:gray;
+                color:#DCDCDC;
+                cursor:pointer;
+            }
+            .p1{
+                position: relative;
+                left:100px;
+                font-size:20px;
+            }
+            #readmore{
+                position: relative;
+                top:-10px;
+                margin:5px;
+                font-size:15px;
+                padding:5px 10px;
+                font-weight:bold;
+                background-color:#DCDCDC;
+                color:black;
+                border-radius: 1px;
+            }
+            #readmore:hover{
+                background-color:gray;
+                color:#DCDCDC;
+                cursor:pointer;
+            }
+            #section4{
+                position:relative;
+                top: -40px;
+                background-color:#000000;
+                padding:20px;
+                height:auto;
+            }
+            .footer {                                     
+                display: flex;
+                padding: 20px 50px;
+                border-top: 1px solid #666;  /* 黑線 */
+                min-width: 800px;
+            }
+            .footer-left {
+                flex: 1 1 40%;          /* 固定用法 站左半40% */
+            }
+            .footer-left iframe {         
+                max-width: 400px;       /*fb的框*/
+                height: 400px;
+                border: none;
+            }
+            .footer-right {
+                flex: 1 1 50%; 
+                padding-left: 20px;
+                color: #ffffff; 
+                background-color: #000000; 
+                overflow: visible; /* 防止內容被裁剪 */
+            }
+            .social-icons {
+                margin-top: 20px;
+            }
+            .social-icons a {      /* 定義鏈接樣式 */
+                display: inline-block;
+                margin-right: 10px;
+                color: #fff;
+                text-decoration: none;  /* 移除下劃線 */
+                font-size: 20px;
+            }
+            .copyright {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 14px;
+                color: #999;
+            }
+        </style>
+        <script>                           
+            var pic,now=0,num=4;
+            window.onload=function(){
+                pics=document.getElementsByClassName("pic");
+                show(now);
+            }
+            function show(i){
+                now=i;
+                for(var k=0;k<pics.length;k++){
+                    pics[k].style.display="none";
+                }
+                pics[now].style.display="block";
+            }
+            function next(){
+                now+=1;
+                if(now>3)
+                    now=0;
+                show(now);
+            }
+            function prev(){
+                now-=1;
+                if(now<0)
+                    now=num-1;
+                show(now);
+            }
+        </script>
+    </head>
+    <body>                              
+        <div class="container">
+            <div class="left">
+                <a href="主頁.html" id="home-link">                
+                    <img src="logo.jpg" class="logo"/>
+                </a>
+            </div>
+            <div class="right">
+                <a href="關於我們.html">
+                    <button class="button1">關於我們</button>
+                </a>
+                <a href="文章.html">
+                    <button class="button1">文章</button>
+                </a>
+                <a href="行動.html">
+                    <button class="button1">行動</button>
+                </a>               
+            </div>
+        </div>
+                                  
+        <div class="outside">                 
+            <div class="pic">
+                <div class="serial">1/4</div>
+                <img class="img" src="投影片1.jpg">
+            </div>
+            <div class="pic">
+                <div class="serial">2/4</div>
+                <img class="img" src="投影片2.jpg">
+            </div>
+            <div class="pic">
+                <div class="serial">3/4</div>
+                <img class="img" src="投影片3.jpg">
+            </div>
+            <div class="pic">
+                <div class="serial">4/4</div>
+                <img class="img" src="投影片4.jpg">
+            </div>
+            <div class="prev" onclick="prev()">&lt</div>
+            <div class="next" onclick="next()">&gt</div>
+        </div>
+
+        <div id="section1">
+            <p class="bigtext">我們是台灣監督企業青年行動<br><br></p>
+            <p class="normaltext">我們是來自各個大學的學生，在各個學校舉辦宣講、聲援，</p>
+            <p class="normaltext1">讓更多學生能夠瞭解到台灣的勞資權力不對等、勞工受壓迫和被壓榨的情況。，改變社會現狀，改變不合理的制度。</p>
+        </div>
+
+        <div id="section2">
+            <div class="container">
+                <div class="left">
+                    <div class="movetoright">
+                        <img src="協商.jpg" height="250" width="300"/>
+                    </div>
+                    <div id="textmove1">
+                        <p>協商取得合法薪資與福利</p>
+                    </div> 
+                </div>
+                <div class="right">
+                    <div class="movetoright">
+                        <img src="宣講.jpg" height="280" width="300"/>
+                    </div>
+                    <div id="textmove2">
+                        <p>各大專院校宣講實現工學聯合</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <img src="抗爭.jpg" height=auto width=100%/>
+
+        <div class="section3">
+            <div class="container">
+                <div class="left">
+                    <div id="big">
+                        <p>相關文章</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <a href="文章.html">
+                        <button id="morearticle">更多文章</button>
+                    </a>
+                </div>   
+            </div>
+            <div class="p1">
+                <img src="何.png" height="400" width=auto/>
+                <p>文章|觀點投書：與其一再迴避職責，<br>
+                何佩珊部長何不知所進退？<br><br>
+                2024/11/18</p>
+                <div>
+                    <a href="文章1.html">
+                        <button id="readmore">閱讀更多</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="section4">
+            <div class="footer">
+                <div class="footer-left">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/profile.php?id=61567452682767" 
+                        data-width="340" 
+                        data-height="300" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <h2>聯絡我們</h2>
+                    <p>台灣監督企業青年行動</p>
+                    <p>電話:0900560027</p>
+                    <p>郵件：taiwanjianduqiyeqingnianxingdo@gmail.com</p>
+        
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567452682767" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/tyi_cropwatch/" target="_blank">IG</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="copyright">
+                Copyright © 台灣監督企業青年行動
+            </div>
+        </div>                                              <!--JavaScript (Facebook 插件加載)-->
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0">
+        </script>
+    </body>
+</html>
+
+主頁
+------------------
+文章1
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>                               
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <link rel="icon" href="logo.jpg" type="image/jpg">     
+        <title>行動|台灣監督企業青年行動</title>
+        <style>
+            html{                                       
+                -webkit-text-size-adjust:100%;
+            }
+            .container {
+                display: flex;
+                width: 100%;  
+            }
+            .left {
+                flex: 1; 
+                max-width: 50%; 
+            }
+            .right {
+                flex: 1; 
+                max-width: 50%;
+            }
+            #home-link{
+                position: relative;
+                top: 1px;
+                left:200px;
+                width: 50%;
+                z-index:1000;                  
+                display:block;  
+                cursor:pointer;
+            }
+            .logo{
+                height: 120px !important;
+            }
+            .button1{
+                display:inline-block;
+                position: relative;
+                top:40px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
+                border-radius: 10px;
+            }
+            .button1:hover{
+                background-color:gray;
+                color:black;
+                cursor:pointer;
+            }
+            #section-1{
+                position:relative;
+                top: -40px;
+                background-color:#000000;
+                padding:20px;
+                height:auto;
+            }
+            .footer {                                     
+                display: flex;
+                padding: 20px 50px;
+                border-top: 1px solid #666;  
+                min-width: 800px;
+            }
+            .footer-left {
+                flex: 1 1 40%;          
+            }
+            .footer-left iframe {         
+                max-width: 400px;       
+                height: 400px;
+                border: none;
+            }
+            .footer-right {
+                flex: 1 1 50%; 
+                padding-left: 20px;
+                color: #ffffff; 
+                background-color: #000000; 
+                overflow: visible; 
+            }
+            .social-icons {
+                margin-top: 20px;
+            }
+            .social-icons a {     
+                display: inline-block;
+                margin-right: 10px;
+                color: #fff;
+                text-decoration: none;  
+                font-size: 20px;
+            }
+            .copyright {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 14px;
+                color: #999;
+            }
+            #section1{
+                position:relative;
+                top:-3px;
+                height:3000px;
+                background:#DCDCDC;
+                
+            }
+            .center{
+                position: relative;
+                left: 30%;
+                text-align: left;
+                padding-top: 55px; 
+                width: 580px;
+            }
+            .center p {
+                margin: 0; 
+                line-height: 1.5;
+                letter-spacing: 2px; 
+            }
+            .center img {
+                position: relative;
+                top: -70px;
+                margin-top: 1px; 
+                height:800px;
+                width:567px;
+            }
+            .big{
+                font-size:40px;
+                font-weight:bold;
+            }
+            .small{
+                font-size:17px;
+            }
+            .fb-icon {
+            width: 35px;
+            height: 35px;
+            position: relative;
+            top: -30px; 
+            left: 430px;
+            background-color:#DCDCDC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 增加陰影效果 */
+            transition: transform 0.3s, box-shadow 0.3s;
+            }
+            .fb-icon:hover {
+                transform: scale(1.1); /* 放大效果 */
+                box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+            }
+            .fb-icon img { 
+                position: relative;
+                top: 1px; 
+                width: 30px;
+                height: 30px;
+            }
+            .ig-icon {
+            width: 35px;
+            height: 35px;
+            position: relative;
+            top: -65px; 
+            left: 480px;
+            background-color:#DCDCDC; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+            transition: transform 0.3s, box-shadow 0.3s;
+            }
+            .ig-icon:hover {
+                transform: scale(1.1); 
+                box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+            }
+            .ig-icon img {
+                position: relative;
+                top: 1px; 
+                width: 30px;
+                height: 30px;
+            }
+            .line-icon {
+            width: 35px;
+            height: 35px;
+            position: relative;
+            top: -100px; 
+            left: 530px;
+            background-color:#DCDCDC; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+            transition: transform 0.3s, box-shadow 0.3s;
+            }
+            .line-icon:hover {
+                transform: scale(1.1); 
+                box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+            }
+            .line-icon img {
+                position: relative;
+                top: 1px; 
+                width: 30px;
+                height: 30px;
+            }
+        </style>
+    </head>
+    <body>                               
+        <div class="container">
+            <div class="left">
+                <a href="主頁.html" id="home-link">                
+                    <img src="logo.jpg" class="logo"/>
+                </a>
+            </div>
+            <div class="right">
+                <a href="關於我們.html">
+                    <button class="button1">關於我們</button>
+                </a>
+                <a href="文章.html">
+                    <button class="button1">文章</button>
+                </a>
+                <a href="行動.html">
+                    <button class="button1">行動</button>
+                </a>               
+            </div>
+        </div>
+
+        <div id="section1">
+            <div class="center">
+                <p> 
+                    <div class="big">
+                        文章|觀點投書：與其一再迴避職<br>
+                        責何佩珊部長何不知所進退？
+                    </div>
+                    <br><br>
+                    <div class="small">
+                        2024/11/18 文章
+                    </div>
+                </p>
+                <a class="fb-icon" 
+                    href="https://www.facebook.com/sharer/sharer.php?u=https://www.storm.mg/article/5273823" 
+                    target="_blank" 
+                    title="分享至Facebook">
+                    <img src="fb.icon.png" alt="Facebook">
+                </a>
+                <a class="ig-icon" 
+                    href="https://www.instagram.com/p/https://www.instagram.com/p/DCiBwPsT91O/" 
+                    target="_blank" 
+                    title="分享至IG">
+                    <img src="ig.icon.jpg" alt="IG">
+                </a>
+                <a href="https://social-plugins.line.me/lineit/share?url=https://www.instagram.com/p/https://www.storm.mg/article/5273823/" 
+                   target="_blank" 
+                   class="line-icon" 
+                   title="分享至 LINE">
+                   <img src="line.icon.png" alt="Line">
+                </a>
+                <img src="何.png">
+                <p>近日以來，身為執掌、管理我國最大勞動相關政策與權利政府機關作為職責的勞動部部長，居然就如何認定何謂「低薪」的部分，
+                    在立法院質詢時說出了與自身政策矛盾的說法！<br><br>
+                    隨著2023年通過了《最低工資法》，今年九月在由勞動部長何佩珊擔任召集人的最低工資審議會議中，做出了從明年起最低工
+                    資僅調漲4%至每月2萬8590元的結論。然而，何佩珊部長在立院面對林淑芬委員備詢時，主動表示根據經濟合作暨發展組織（OECD）
+                    定義，低薪為「總薪資中位數的三分之二」，以台灣勞工薪資中位數4萬6千元的三分之二來計算，月薪3萬1000元的勞工即為「低薪」。<br><br>
+                    但讓我們年輕人感到質疑更無法理解的是，既然何部長也首次在國會坦言：目前台灣「低薪」的標準應為3萬1000元，然而，
+                    為何在日前調漲最低薪資過程中，卻看不見勞動部以此幫台灣勞工據理力爭，反而在會議僅做出微幅調漲後出面「感謝」雇主
+                    團體願意「照顧」勞工？<br><br>這實在讓我們不禁懷疑，何部長是否真有意識到自己所擔任的，乃是肩負起為台灣近千萬廣大勞
+                    工權益把關職責的「勞動部部長」？讓我們感到更離譜的是，同樣在立法院，面對涂權吉委員在衛環委員會中，針對最近有關
+                    由國家所經營的中鋼運通公司，出現了包括惡意逼退超過300名台灣船員、無預警中斷船員勞健保、惡意侵害勞工權益所引發的
+                    持續抗爭，對勞動部的質詢中，何部長再次展現出完全出缺乏對於自身權責，以及法律基本常識的理解！<br><br>
+                    一、部長刻意推卸責任，放任讓勞工成為勞資爭議中最大後害者<br>
+                    何部長在答詢時，針對國營的中鋼運通公司逼退超過300名台灣船員等重大勞資爭議，猶如跳針一般，一下以司法訴訟程序尚未
+                    終結為藉口，一下推給已請交通部航港局協助云云，講了半天，何部長從頭到尾不斷迴避的，卻是勞動部的職責！（相關報導：
+                    公務員疑遭霸凌輕生！他揭分署長「2年內逼走17名主管」　怒批勞發署「這1處置」沒作為｜更多文章）就機關自身權責執掌
+                    而論，按《勞資爭議處理法》第4條明文規定：「本法所稱主管機關：在中央為勞動部」。<br><br>此外，在質詢時，勞保局針對國營的
+                    中鋼運通所雇用的台灣船員僱傭契約屬於「定期／不定期」的認定，所引發的爭議回復之函釋明確指出，在勞資爭議調處的相關
+                    事件，中央主管機關就是勞動部！再者，按《勞動基準法》第4條之規定，也已經指出有關勞動基準法相關規定事項主管機關就
+                    是勞動部。這也是2021年勞動部針對外送員與平台業者之間的關係是否屬於僱傭契約的爭議時，即便法院內的爭訟尚未終結，卻
+                    得以主動會同臺北市及桃園市勞動檢查處，直接明確認定兩家外送平台業者與外送員之間為「僱傭關係」。</p>
+            </div>
+
+        </div>
+
+        <div id="section-1">
+            <div class="footer">
+                <div class="footer-left">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/profile.php?id=61567452682767" 
+                        data-width="340" 
+                        data-height="300" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <h2>聯絡我們</h2>
+                    <p>台灣監督企業青年行動</p>
+                    <p>電話:0900560027</p>
+                    <p>郵件：taiwanjianduqiyeqingnianxingdo@gmail.com</p>
+        
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567452682767" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/tyi_cropwatch/" target="_blank">IG</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="copyright">
+                Copyright © 台灣監督企業青年行動
+            </div>
+        </div>                                              
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0">
+        </script>
+    </body>
+</html>
+
+------------------
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>                               
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="logo.jpg" type="image/jpg">         
+        <title>關於我們|台灣監督企業青年行動</title>
+        <style>
+            html{                                       
+                -webkit-text-size-adjust:100%;
+            }
+            .container {                /*橫向排版 flex-direction:column 為縱向*/
+                display: flex;
+                width: 100%;  
+            }
+            .left {
+                flex: 1; 
+                max-width: 50%; 
+            }
+            .right {
+                flex: 1; 
+                max-width: 50%;
+            }
+            #home-link{
+                position: relative;
+                top: 1px;
+                width: 50%;
+                left:200px;
+                z-index:1000;                  
+                display:block;  
+                cursor:pointer;
+            }
+            .logo{
+                height: 120px !important;
+            }
+            .button1{
+                display:inline-block;
+                position: relative;
+                top:40px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
+                border-radius: 10px;
+            }
+            .button1:hover{
+                background-color:gray;
+                color:black;
+                cursor:pointer;
+            }
+            #fold {
+                display: flex;
+                height: 100%;  
+            }
+            #fold img {
+                width: 100%;
+                height: auto;
+            }
+            #text-overlay {
+                position: absolute;         /* 疊在圖上 */
+                top: 40%; 
+                left: 50%; 
+                transform: translate(-50%, -50%);       /*居中 */
+                color: white;
+                font-size: 36px;
+                text-align: center;
+                z-index: 999;       /* 文字位於上 */
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);        /*陰影 */
+            }
+            #section-1{
+                position:relative;
+                top: 100px;
+                background-color:#000000;
+                padding:20px;
+                height:auto;
+            }
+            .footer {                                     
+                display: flex;
+                padding: 20px 50px;
+                border-top: 1px solid #666;  
+                min-width: 800px;
+            }
+            .footer-left {
+                flex: 1 1 40%;         
+            }
+            .footer-left iframe {         
+                max-width: 400px;     
+                height: 400px;
+                border: none;
+            }
+            .footer-right {
+                flex: 1 1 50%; 
+                padding-left: 20px;
+                color: #ffffff; 
+                background-color: #000000; 
+                overflow: visible; 
+            }
+            .social-icons {
+                margin-top: 20px;
+            }
+            .social-icons a {     
+                display: inline-block;
+                margin-right: 10px;
+                color: #fff;
+                text-decoration: none;  
+                font-size: 20px;
+            }
+            .copyright {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 14px;
+                color: #999;
+            }
+            #section1{
+                position:relative;
+                top:-40px;
+                height:2000px;
+                background:#DCDCDC;
+            }
+            #center{
+                position:relative;
+                top:45px;
+                left:26%;
+                width:800px;
+            }
+            #center p {
+                
+                line-height: 1.5;
+                letter-spacing: 2px; 
+            }
+            #center img{
+                width:100%;
+                height:auto;
+            }
+            .big{
+                font-size:35px;
+                font-weight:bold;
+            }
+            .small{
+                font-size:17px;
+            }
+            .mid{
+                font-weight:bold;
+                font-size:17px;
+            }
+        </style>
+    </head>
+    <body>                               
+        <div class="container">
+            <div class="left">
+                <a href="主頁.html" id="home-link">                
+                    <img src="logo.jpg" class="logo"/>
+                </a>
+            </div>
+            <div class="right">
+                <a href="關於我們.html">
+                    <button class="button1">關於我們</button>
+                </a>
+                <a href="文章.html">
+                    <button class="button1">文章</button>
+                </a>
+                <a href="行動.html">
+                    <button class="button1">行動</button>
+                </a>               
+            </div>
+        </div>
+
+        <div id="fold">
+            <img src="關於我們icon.jpg" />
+            <div id="text-overlay">關於我們</div>
+        </div>
+
+        <div id="section1">
+            <div id="center">
+                <div class="big">
+                    <p>認識台監青</p>
+                </div>
+                <div class="mid">
+                    <p>我們是來自各個大學的學生，在了解到台灣的勞動權益和工作保障完全符合其血汗之島的罵名後，我們決定聯合起來，成立台灣監督企業青年行動。</p>
+                </div>
+                <br>
+                <div class="big">
+                    <p>我們是誰?</p>
+                <div class="small">
+                    <p>台灣監督企業青年行動成立於2024年，我們在各個學校舉辦宣講、聲援，讓更多學生能夠瞭解到台灣的勞資權力不對等、勞工受壓迫和被壓榨的情況。
+                        我們歡迎更多學生與青年加入我們，一同與廣大的勞動者團結起來，改變社會現狀，改變不合理的制度。
+                    </p>
+                </div>
+                <br>
+                <img src="介紹.jpg"/>
+                <br>
+                <div class="big">
+                    <p>為什麼要幫助勞工?</p>
+                </div>
+                <div class="small">
+                    <p>學生和勞工都屬於社會的大多數勞動者階級，儘管在經濟條件和生活方式上可能有所不同，但長遠來看，他們面臨的壓迫根源
+                        （如資本剝削、不平等制度）是相似的。學生支持勞工的權利鬥爭，是為了建立更公平的社會。且勞工的處境常因缺乏資源和
+                        平台而被忽視，而學生通常擁有較高的教育資本和社會聲量，能夠更有效地幫助勞工爭取權益。學生畢業後大多會進入勞動市
+                        場，他們今天幫助勞工爭取的權利（如公平工資、合理工時、勞動保障），未來也會成為自己的保障。很多學生在校內學習社
+                        會學、經濟學或政治理論，但僅有理論理解是不足的。通過參與勞工運動，學生可以更深入地理解理論與現實的關係。
+                    </p>
+                </div>
+                <br>
+                <img src="介紹2.jpg"/>
+                <br>
+                <div class="small">
+                    <p>資本主義社會中，勞動者的價值往往被低估，而資本擁有者的利益被過度擴大。學生協助勞工，是在挑戰這種結構性不平等，
+                        為社會公正作出貢獻。對抗壓迫文化：許多勞工因害怕報復而不敢發聲，學生的介入能夠減輕這種壓力，形成更強有力的抗爭
+                        力量。承繼社會運動的傳統：學生歷來在社會運動中扮演重要角色（如1960年代的民權運動、反戰運動等）。幫助勞工是這種進步傳
+                        統的延續。學習勞動價值：學生通過與勞工互動，可以更深刻地認識勞動的重要性，打破對藍領工作的偏見，進而理解平等與
+                        尊重的真正意義。幫助勞工，實際上不僅僅是為了「他們」，也是為了「我們」，為了構建一個更包容、公正的社會。
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="section-1">
+            <div class="footer">
+                <div class="footer-left">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/profile.php?id=61567452682767" 
+                        data-width="340" 
+                        data-height="300" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <h2>聯絡我們</h2>
+                    <p>台灣監督企業青年行動</p>
+                    <p>電話:0900560027</p>
+                    <p>郵件：taiwanjianduqiyeqingnianxingdo@gmail.com</p>
+        
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567452682767" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/tyi_cropwatch/" target="_blank">IG</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="copyright">
+                Copyright © 台灣監督企業青年行動
+            </div>
+        </div>                                              
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0">
+        </script>
+        
+    </body>
+</html>
+
+關於我們
+----------
+文章
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>                               
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />       
+        <link rel="icon" href="logo.jpg" type="image/jpg">   
+        <title>文章|台灣監督企業青年行動</title>
+        <style>
+            html{                                       
+                -webkit-text-size-adjust:100%;
+            }
+            .container {
+                display: flex;
+                width: 100%;  
+            }
+            .left {
+                flex: 1; 
+                max-width: 50%; 
+            }
+            .right {
+                flex: 1; 
+                max-width: 50%;
+            }
+            #home-link{
+                position: relative;
+                top: 1px;
+                width: 50%;
+                left:200px;
+                z-index:1000;                  
+                display:block;  
+                cursor:pointer;
+            }
+            .logo{
+                height: 120px !important;
+            }
+            .button1{
+                display:inline-block;
+                position: relative;
+                top:40px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
+                border-radius: 10px;
+            }
+            .button1:hover{
+                background-color:gray;
+                color:black;
+                cursor:pointer;
+            }
+            #fold {
+                display: flex;
+                height: 100%;  
+            }
+            #fold img {
+                width: 100%;
+                height: 270px;
+            }
+            #text-overlay {
+                position: absolute;         
+                top: 40%; 
+                left: 50%; 
+                transform: translate(-50%, -50%);       
+                color: white;
+                font-size: 36px;
+                text-align: center;
+                z-index: 999;      
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);       
+            }
+            #section-1{
+                position:relative;
+                top: -40px;
+                background-color:#000000;
+                padding:20px;
+                height:auto;
+            }
+            .footer {                                     
+                display: flex;
+                padding: 20px 50px;
+                border-top: 1px solid #666;  
+                min-width: 800px;
+            }
+            .footer-left {
+                flex: 1 1 40%;          
+            }
+            .footer-left iframe {         
+                max-width: 400px;       
+                height: 400px;
+                border: none;
+            }
+            .footer-right {
+                flex: 1 1 50%; 
+                padding-left: 20px;
+                color: #ffffff; 
+                background-color: #000000; 
+                overflow: visible; 
+            }
+            .social-icons {
+                margin-top: 20px;
+            }
+            .social-icons a {      
+                display: inline-block;
+                margin-right: 10px;
+                color: #fff;
+                text-decoration: none;  
+                font-size: 20px;
+            }
+            .copyright {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 14px;
+                color: #999;
+            }
+            #section1{
+                position:relative;
+                top:-20px;
+                height:1000px;
+                background:#DCDCDC;
+                display: flex;
+                justify-content: center;
+            }
+            .rectangle {
+                position:relative;
+                top:80px;
+                display: flex;
+                width: 80%;
+                height:300px;
+                max-width: 1100px;
+                border: 1px solid #7A848D;
+                background-color: #DCDCDC;
+                overflow: hidden;
+            }
+            .rectangle .image-container {
+                flex: 1;
+                max-width: 50%;
+            }
+            .rectangle .image-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .rectangle .text-container {
+                position: relative;
+                flex: 1;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                left:16px;
+            }
+            .rectangle .text-container p {
+                color: #000;
+                margin: 0; /* 清除預設的間距 */
+                max-width: 520px; 
+            }
+            .big{
+                font-size:21px;
+                font-weight:bold;
+            }
+            .small{
+                font-size:17px;
+                line-height: 1.5;
+                letter-spacing: 1.5px; 
+            }
+            .button1{
+                display:inline-block;
+                position: relative;
+                top:10px;
+                left:1px;
+                padding:5px 10px;
+                margin:1px;
+                font-size:13px;
+                font-weight:bold;
+                background-color:#DCDCDC;
+                color:#000;
+                border-radius: 10px;
+            }
+            .button1:hover{
+                background-color:white;
+                color:#DCDCDC;
+                cursor:pointer;
+            }
+        </style>
+    </head>
+    <body>                               
+        <div class="container">
+            <div class="left">
+                <a href="主頁.html" id="home-link">                
+                    <img src="logo.jpg" class="logo"/>
+                </a>
+            </div>
+            <div class="right">
+                <a href="關於我們.html">
+                    <button class="button1">關於我們</button>
+                </a>
+                <a href="文章.html">
+                    <button class="button1">文章</button>
+                </a>
+                <a href="行動.html">
+                    <button class="button1">行動</button>
+                </a>               
+            </div>
+        </div>
+
+        <div id="fold">
+            <img src="文章icon.png" />
+            <div id="text-overlay">文章</div>
+        </div>
+
+        <div id="section1">
+            <div class="rectangle">
+                <div class="image-container">
+                    <img src="何2.jpg">
+                </div>
+                <div class="text-container">
+                    <div class="big">
+                        <p>觀點投書：與其一再迴避職責，何佩珊部長何不知所進退？</p>
+                    </div>
+                    <br>
+                    <div class="small">
+                        <p>2024/11/18 文章<br>
+                            本文探討何佩珊部長近期質詢的發言，指出了何部長在中鋼運通公司與其船員僱傭契約性質的爭議，罔顧事實、偏袒
+                            資方、缺乏專業素養的言行。也表明了台灣監督企業青年行動的訴求，即希望勞動部在勞工勞動權利受到侵害時，能
+                            夠負起自身的權責，為廣大的勞工朋友們爭取應有的權利。
+                        </p>
+                    </div>
+                    <a href="文章1.html">
+                        <button class="button1">前往了解></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-1">
+            <div class="footer">
+                <div class="footer-left">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/profile.php?id=61567452682767" 
+                        data-width="340" 
+                        data-height="300" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <h2>聯絡我們</h2>
+                    <p>台灣監督企業青年行動</p>
+                    <p>電話:0900560027</p>
+                    <p>郵件：taiwanjianduqiyeqingnianxingdo@gmail.com</p>
+        
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567452682767" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/tyi_cropwatch/" target="_blank">IG</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="copyright">
+                Copyright © 台灣監督企業青年行動
+            </div>
+        </div>                                              
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0">
+        </script>
+    </body>
+</html>
+
+#section1{
+    position:relative;
+    top:-20px;
+    height:1000px;
+    background:#DCDCDC;
+    display: flex;
+    justify-content: center;
+}
+.rectangle {
+    position:relative;
+    top:80px;
+    display: flex;
+    width: 80%;
+    height:300px;
+    max-width: 1100px;
+    border: 1px solid #7A848D;
+    background-color: #DCDCDC;
+    overflow: hidden;
+}
+.rectangle .image-container {
+    flex: 1;
+    max-width: 50%;
+}
+.rectangle .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.rectangle .text-container {
+    position: relative;
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    text-align: left;
+    left:16px;
+}
+.rectangle .text-container p {
+    color: #000;
+}
+.big{
+    font-size:21px;
+    font-weight:bold;
+}
+.small{
+    font-size:17px;
+}
+<div id="section1">
+    <div class="rectangle">
+        <div class="image-container">
+            <img src="何2.jpg">
+        </div>
+        <div class="text-container">
+            <div class="big">
+                <p>觀點投書：與其一再迴避職責，何佩珊部長何不知所進退？</p>
+            </div>
+            <div class="small">
+                <p>2024/11/18 文章</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+--------
+模板
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>                               
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <link rel="icon" href="logo.jpg" type="image/jpg">     
+        <title>行動|北大演講</title>
+        <style>
+            html{                                       
+                -webkit-text-size-adjust:100%;
+            }
+            .container {
+                display: flex;
+                width: 100%;  
+            }
+            .left {
+                flex: 1; 
+                max-width: 50%; 
+            }
+            .right {
+                flex: 1; 
+                max-width: 50%;
+            }
+            #home-link{
+                position: relative;
+                top: 1px;
+                left:200px;
+                width: 50%;
+                z-index:1000;                  
+                display:block;  
+                cursor:pointer;
+            }
+            .logo{
+                height: 120px !important;
+            }
+            .button1{
+                display:inline-block;
+                position: relative;
+                top:40px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
+                border-radius: 10px;
+            }
+            .button1:hover{
+                background-color:gray;
+                color:black;
+                cursor:pointer;
+            }
+            #section-1{
+                position:relative;
+                top: -40px;
+                background-color:#000000;
+                padding:20px;
+                height:auto;
+            }
+            .footer {                                     
+                display: flex;
+                padding: 20px 50px;
+                border-top: 1px solid #666;  
+                min-width: 800px;
+            }
+            .footer-left {
+                flex: 1 1 40%;          
+            }
+            .footer-left iframe {         
+                max-width: 400px;       
+                height: 400px;
+                border: none;
+            }
+            .footer-right {
+                flex: 1 1 50%; 
+                padding-left: 20px;
+                color: #ffffff; 
+                background-color: #000000; 
+                overflow: visible; 
+            }
+            .social-icons {
+                margin-top: 20px;
+            }
+            .social-icons a {     
+                display: inline-block;
+                margin-right: 10px;
+                color: #fff;
+                text-decoration: none;  
+                font-size: 20px;
+            }
+            .copyright {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 14px;
+                color: #999;
+            }
+            #section1{
+                position:relative;
+                height:1000px;
+                background:#DCDCDC;
+                display: flex;
+                justify-content: center;
+            }
+            .big{
+                font-size:21px;
+                font-weight:bold;
+            }
+            .small{
+                font-size:17px;
+                line-height: 1.5;
+                letter-spacing: 1.5px; 
+            }
+        </style>
+    </head>
+    <body>                               
+        <div class="container">
+            <div class="left">
+                <a href="主頁.html" id="home-link">                
+                    <img src="logo.jpg" class="logo"/>
+                </a>
+            </div>
+            <div class="right">
+                <a href="關於我們.html">
+                    <button class="button1">關於我們</button>
+                </a>
+                <a href="文章.html">
+                    <button class="button1">文章</button>
+                </a>
+                <a href="行動.html">
+                    <button class="button1">行動</button>
+                </a>               
+            </div>
+        </div>
+
+        <div id="section1">
+            <p>a</p>
+        </div>
+
+        <div id="section-1">
+            <div class="footer">
+                <div class="footer-left">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/profile.php?id=61567452682767" 
+                        data-width="340" 
+                        data-height="300" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <h2>聯絡我們</h2>
+                    <p>台灣監督企業青年行動</p>
+                    <p>電話:0900560027</p>
+                    <p>郵件：taiwanjianduqiyeqingnianxingdo@gmail.com</p>
+        
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567452682767" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/tyi_cropwatch/" target="_blank">IG</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="copyright">
+                Copyright © 台灣監督企業青年行動
+            </div>
+        </div>                                              
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0">
+        </script>
+    </body>
+</html>
+
+-----------------
+行動
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>                               
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <link rel="icon" href="logo.jpg" type="image/jpg">     
+        <title>行動|台灣監督企業青年行動</title>
+        <style>
+            html{                                       
+                -webkit-text-size-adjust:100%;
+            }
+            .container {
+                display: flex;
+                width: 100%;  
+            }
+            .left {
+                flex: 1; 
+                max-width: 50%; 
+            }
+            .right {
+                flex: 1; 
+                max-width: 50%;
+            }
+            #home-link{
+                position: relative;
+                top: 1px;
+                left:200px;
+                width: 50%;
+                z-index:1000;                  
+                display:block;  
+                cursor:pointer;
+            }
+            .logo{
+                height: 120px !important;
+            }
+            .button1{
+                display:inline-block;
+                position: relative;
+                top:40px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
+                border-radius: 10px;
+            }
+            .button1:hover{
+                background-color:gray;
+                color:black;
+                cursor:pointer;
+            }
+            #fold {
+                display: flex;
+                height: 100%;  
+            }
+            #fold img {
+                width: 100%;
+                height: 270px;
+            }
+            #text-overlay {
+                position: absolute;         
+                top: 40%; 
+                left: 50%; 
+                transform: translate(-50%, -50%);       
+                color: white;
+                font-size: 36px;
+                text-align: center;
+                z-index: 999;      
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);       
+            }
+            #section-1{
+                position:relative;
+                top: -40px;
+                background-color:#000000;
+                padding:20px;
+                height:auto;
+            }
+            .footer {                                     
+                display: flex;
+                padding: 20px 50px;
+                border-top: 1px solid #666;  
+                min-width: 800px;
+            }
+            .footer-left {
+                flex: 1 1 40%;          
+            }
+            .footer-left iframe {         
+                max-width: 400px;       
+                height: 400px;
+                border: none;
+            }
+            .footer-right {
+                flex: 1 1 50%; 
+                padding-left: 20px;
+                color: #ffffff; 
+                background-color: #000000; 
+                overflow: visible; 
+            }
+            .social-icons {
+                margin-top: 20px;
+            }
+            .social-icons a {     
+                display: inline-block;
+                margin-right: 10px;
+                color: #fff;
+                text-decoration: none;  
+                font-size: 20px;
+            }
+            .copyright {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 14px;
+                color: #999;
+            }
+            #section1{
+                position:relative;
+                top:-20px;
+                height:1350px;
+                background:#DCDCDC;
+                display: flex;
+                flex-direction: column;
+                align-items: center;            /* 子項水平居中 */
+            }
+            .rectangle {
+                display: flex;
+                width: 80%;
+                max-width: 1100px;
+                height:300px;
+                border: 1px solid #7A848D;
+                background-color: #DCDCDC;
+                overflow: hidden;
+            }
+            .rectangle:first-child {        /* 專為第一個長方形增加 margin-top */
+                margin-top: 80px; 
+            }
+            .rectangle .image-container {
+                flex: 1;
+                max-width: 50%;
+            }
+            .rectangle .image-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .rectangle .text-container {
+                position: relative;
+                flex: 1;
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+                left:16px;
+            }
+            .rectangle .text-container p {
+                color: #000;
+                margin: 0; /* 清除預設的間距 */
+                max-width: 520px; 
+            }
+            .big{
+                font-size:21px;
+                font-weight:bold;
+            }
+            .small{
+                font-size:17px;
+                line-height: 1.3;
+                letter-spacing: 1.5px; 
+            }
+            .button2{
+                display:inline-block;
+                position: relative;
+                top:10px;
+                left:1px;
+                padding:5px 10px;
+                margin:1px;
+                font-size:13px;
+                font-weight:bold;
+                background-color:#DCDCDC;
+                color:#000;
+                border-radius: 10px;
+            }
+            .button2:hover{
+                background-color:gray;
+                color:#DCDCDC;
+                cursor:pointer;
+            }
+        </style>
+    </head>
+    <body>                               
+        <div class="container">
+            <div class="left">
+                <a href="主頁.html" id="home-link">                
+                    <img src="logo.jpg" class="logo"/>
+                </a>
+            </div>
+            <div class="right">
+                <a href="關於我們.html">
+                    <button class="button1">關於我們</button>
+                </a>
+                <a href="文章.html">
+                    <button class="button1">文章</button>
+                </a>
+                <a href="行動.html">
+                    <button class="button1">行動</button>
+                </a>               
+            </div>
+        </div>
+
+        <div id="fold">
+            <img src="行動icon.jpg" />
+            <div id="text-overlay">行動</div>
+        </div>
+        <div id="section1">
+
+            <div class="rectangle">         <!--action3-->
+                <div class="image-container">
+                    <img src="行動3封面.jpg">
+                </div>
+                <div class="text-container">
+                    <div class="big">
+                        <p>中鋼總部抗議</p>
+                    </div>
+                    <br>
+                    <div class="small">
+                        <p>2024/11/27 行動<br>
+                            隨著中鋼運通企業工會於11/27召集該工會之會員和家屬前往中鋼大樓前，我們做為聲援團體的一員，以學生青年的身分，
+                            與工會會員一同表達要求恢復船員勞健保、保障台灣船員工作權，以及撤換失職主管的訴求，。在本次抗爭過後，我們也同
+                            時發現法院判決指出，中鋼運通集團對於在岸候船期的船員具有給付勞健保之義務，資方不得以定期契約之簽訂作為逃避公
+                            法上對於雇主強制義務的藉口。
+                        </p>
+                    </div>
+                    <a href="行動3中鋼車隊.html">
+                        <button class="button2">前往了解></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="rectangle">         <!--action2-->
+                <div class="image-container">
+                    <img src="行動2封面.jpg">
+                </div>
+                <div class="text-container">
+                    <div class="big">
+                        <p>台灣大學的校內宣講</p>
+                    </div>
+                    <br>
+                    <div class="small">
+                        <p>2024/11/20 行動<br>
+                            我們與中鋼運通工會合作舉辦一場對台大學生的社課講座。社課中，王慶宏理事長生動地描述了船員面臨的工作環境
+                            與各種因資方打壓而產生的問題。隨後，陳柏謙研究員說明了公司剝奪船員基本權利的手段以及中鋼運通對法律的曲解
+                            ，並導致船員們工作權、生存權嚴重受損，於是發起。最後再以台灣監督企業青年行動的宣講做結尾，論述工學聯合的
+                            重要性與必要性，以及說明我們當前已經在展開的行動。讓大家可以了解到，勞權議題、學生議題以及其他的社會議題
+                            相互結合的可行性與展望。
+                        </p>
+                    </div>
+                    <a href="行動2台大.html">
+                        <button class="button2">前往了解></button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="rectangle">     <!--action1-->
+                <div class="image-container">
+                    <img src="行動1封面.jpg">
+                </div>
+                <div class="text-container">
+                    <div class="big">
+                        <p>台北大學的校內宣講</p>
+                    </div>
+                    <br>
+                    <div class="small">
+                        <p>2024/10/24 行動<br>
+                            我們與中鋼運通工會合作舉辦一場對北大學生的校內宣講。活動中，蔡炎龍理事生動地描述了船員面臨的工作環境與
+                            各種因資方打壓而產生的問題，讓同學們能更全面地理解船員的困境。隨後，陳柏謙研究員說明了公司剝奪船員基本權利的手段
+                            以及中鋼運通對法律的曲解，並導致船員們工作權、生存權嚴重受損，於是發起抗爭的原因。再來以台灣監督企業青年行動的宣
+                            講做結尾，論述工學聯合的重要性與必要性。
+                        </p>
+                    </div>
+                    <a href="行動1北大.html">
+                        <button class="button2">前往了解></button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="section-1">
+            <div class="footer">
+                <div class="footer-left">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/profile.php?id=61567452682767" 
+                        data-width="340" 
+                        data-height="300" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <h2>聯絡我們</h2>
+                    <p>台灣監督企業青年行動</p>
+                    <p>電話:0900560027</p>
+                    <p>郵件：taiwanjianduqiyeqingnianxingdo@gmail.com</p>
+        
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567452682767" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/tyi_cropwatch/" target="_blank">IG</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="copyright">
+                Copyright © 台灣監督企業青年行動
+            </div>
+        </div>                                              
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0">
+        </script>
+    </body>
+</html>
+
+ <!-- ---------------------------------- -->
+行動3中鋼車隊
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>                               
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <link rel="icon" href="logo.jpg" type="image/jpg">     
+        <title>行動|中鋼抗議</title>
+        <style>
+            html{                                       
+                -webkit-text-size-adjust:100%;
+            }
+            .container {
+                display: flex;
+                width: 100%;  
+            }
+            .left {
+                flex: 1; 
+                max-width: 50%; 
+            }
+            .right {
+                flex: 1; 
+                max-width: 50%;
+            }
+            #home-link{
+                position: relative;
+                top: 1px;
+                left:200px;
+                width: 50%;
+                z-index:1000;                  
+                display:block;  
+                cursor:pointer;
+            }
+            .logo{
+                height: 120px !important;
+            }
+            .button1{
+                display:inline-block;
+                position: relative;
+                top:40px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
+                border-radius: 10px;
+            }
+            .button1:hover{
+                background-color:gray;
+                color:black;
+                cursor:pointer;
+            }
+            #section-1{
+                position:relative;
+                background-color:#000000;
+                padding:20px;
+                height:auto;
+            }
+            .footer {                                 
+                display: flex;
+                padding: 20px 50px;
+                border-top: 1px solid #666;  
+                min-width: 800px;
+            }
+            .footer-left {
+                flex: 1 1 40%;
+            }
+            .footer-left iframe {       
+                max-width: 400px;       
+                height: 400px;
+                border: none;
+            }
+            .footer-right {
+                flex: 1 1 50%; 
+                padding-left: 20px;
+                color: #ffffff; 
+                background-color: #000000; 
+                overflow: visible; 
+            }
+            .social-icons {
+                margin-top: 20px;
+            }
+            .social-icons a {     
+                display: inline-block;
+                margin-right: 10px;
+                color: #fff;
+                text-decoration: none;  
+                font-size: 20px;
+            }
+            .copyright {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 14px;
+                color: #999;
+            }
+            #section1{
+                position:relative;
+                height:4600px;
+                background:#DCDCDC;
+                display: flex;
+                flex-direction: column;
+            }
+            #center{
+                position: relative;
+                text-align: left;
+                max-width:800px;
+                left:25%;
+            }
+            #center img{
+                margin-top: 30px;
+                height:600px;
+                width:auto;
+                max-width:800px;
+            }
+            #center:first-child {        
+                margin-top: 70px; 
+            }
+            .big{
+                margin-top: 55px;
+                font-size:21px;
+                font-weight:bold;
+            }
+            .small{
+                font-size:17px;
+                line-height: 1.7;
+                letter-spacing: 1.7px; 
+            }
+            .button2{
+                display:inline-block;
+                position: relative;
+                top:80px;
+                left:300px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:#DCDCDCDC;
+                color:black;
+                border-radius: 10px;
+            }
+            .button2:hover{
+                background-color:#000;
+                color:#DCDCDCDC;
+                cursor:pointer;
+            }
+        </style>
+    </head>
+    <body>                               
+        <div class="container">
+            <div class="left">
+                <a href="主頁.html" id="home-link">                
+                    <img src="logo.jpg" class="logo"/>
+                </a>
+            </div>
+            <div class="right">
+                <a href="關於我們.html">
+                    <button class="button1">關於我們</button>
+                </a>
+                <a href="文章.html">
+                    <button class="button1">文章</button>
+                </a>
+                <a href="行動.html">
+                    <button class="button1">行動</button>
+                </a>               
+            </div>
+        </div>
+
+        <div id="section1">
+            <div id="center">
+                <div class="big">
+                    船員權益嚴重受損 要求資方停止打壓學生支持船員抗爭 爭取更好勞動條件
+                </div>
+                <br>
+                <div class="small">
+                    一個最近成立的學生組織「台灣監督企業青年行動」於11/18在中鋼
+                    運通台北辦公室 台北市信義路五段7號，101大樓外 前舉辦一場
+                    聲援中鋼運通船員的活動，並邀請各校的學生與關注勞動議題的學生
+                    組織一同加入聲援。我們指出，船員們所遇到的打壓不只會發生在他
+                    們身上，而是全台灣的勞動者都已經面臨到與即將會面臨到的處境，
+                    所以我們也廣泛地邀請社會大眾與更多地青年學生能夠站出來，一同
+                    聲援這場抗爭。
+                </div>
+                <img src="行動3-1.jpg"/>
+
+                <br><br>
+                <div class="big">
+                    船員困境
+                </div>
+                <br>
+                <div class="small">
+                    作為學生，我們清楚地指出，船員遭遇的打壓族繁不及備載，包括要
+                    為了製造零工傷假象，迫使重傷船員不得申請職災、逼退台灣船員
+                    。而更過分的是，在今年七月資方為了打壓船員爭取其應得的權益
+                    的抗爭，竟切斷數百名船員的勞健保。
+                </div>
+                <img src="行動3封面.jpg"/>
+
+                <br><br>
+                <div class="big">
+                    各校學生挺身而出 要求資方停止打壓
+                </div>
+                <br>
+                <div class="small">
+                    為了捍衛船員的權益，台灣監督企業青年行動與其他關心台灣勞權的
+                    學生組織舉辦了這場聲援活動，共同譴責中鋼運通資方的惡行惡狀，
+                    要求立即改善船員的勞動權益。
+                </div>
+                <img src="行動3-2.jpg"/>
+
+                <br><br>
+                <div class="big">
+                    聲援行動要擴展，學生呼籲社會各界力挺船員
+                </div>
+                <br>
+                <div class="small">
+                    在聲援活動當日，各個學生組織的代表將發起短講，而後一齊唱由學
+                    生自行改編的歌曲，並共同宣誓將會在往後展開一系列行動、支持船
+                    員的權益。
+                    台灣監督企業青年行動表明，這次的抗爭只是開始，未來將讓學生的
+                    力量能夠投身於所有改善台灣勞動權益的議題當中，首先便是呼籲更
+                    多的學生與社會各界能夠關注或支持中運船員的抗爭，讓船員不再是
+                    孤立無援。
+                </div>
+                <img src="行動3-3.jpg"/>
+
+                <br><br>
+                <div class="big">
+                    工人與學生互幫互助 共同開創美好未來
+                </div>
+                <br>
+                <div class="small">
+                    本次行動是近年來首次有獨立的學生組織站出來聲明要保衛勞權，台
+                    灣監督企業青年行動強調，勞工與學生需要互幫互助，對侵權的企業
+                    展開各式調查並維護勞工權益，才不會讓我們的勞動處境愈來愈惡化
+                    。這些支持勞權的青年學子相信，學生與勞工的團結合作，才是能促
+                    使社會變得更加的公平與正義的方法。
+                </div>
+                <img src="行動3-4.jpg"/>
+
+                <a href="行動.html">
+                    <button class="button2">更多行動</button>
+                </a>
+            </div>
+        </div>
+
+        <div id="section-1">
+            <div class="footer">
+                <div class="footer-left">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/profile.php?id=61567452682767" 
+                        data-width="340" 
+                        data-height="300" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <h2>聯絡我們</h2>
+                    <p>台灣監督企業青年行動</p>
+                    <p>電話:0900560027</p>
+                    <p>郵件：taiwanjianduqiyeqingnianxingdo@gmail.com</p>
+        
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567452682767" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/tyi_cropwatch/" target="_blank">IG</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="copyright">
+                Copyright © 台灣監督企業青年行動
+            </div>
+        </div>                                              
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0">
+        </script>
+    </body>
+</html>
+
+ <!-- ---------------------------------- -->
+ 行動2台大
+
+ <!DOCTYPE html>
+<html lang="zh-TW">
+    <head>                               
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <link rel="icon" href="logo.jpg" type="image/jpg">     
+        <title>行動|台大演講</title>
+        <style>
+            html{                                       
+                -webkit-text-size-adjust:100%;
+            }
+            .container {
+                display: flex;
+                width: 100%;  
+            }
+            .left {
+                flex: 1; 
+                max-width: 50%; 
+            }
+            .right {
+                flex: 1; 
+                max-width: 50%;
+            }
+            #home-link{
+                position: relative;
+                top: 1px;
+                left:200px;
+                width: 50%;
+                z-index:1000;                  
+                display:block;  
+                cursor:pointer;
+            }
+            .logo{
+                height: 120px !important;
+            }
+            .button1{
+                display:inline-block;
+                position: relative;
+                top:40px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
+                border-radius: 10px;
+            }
+            .button1:hover{
+                background-color:gray;
+                color:black;
+                cursor:pointer;
+            }
+            #section-1{
+                position:relative;
+                top: -40px;
+                background-color:#000000;
+                padding:20px;
+                height:auto;
+            }
+            .footer {                                     
+                display: flex;
+                padding: 20px 50px;
+                border-top: 1px solid #666;  
+                min-width: 800px;
+            }
+            .footer-left {
+                flex: 1 1 40%;          
+            }
+            .footer-left iframe {         
+                max-width: 400px;       
+                height: 400px;
+                border: none;
+            }
+            .footer-right {
+                flex: 1 1 50%; 
+                padding-left: 20px;
+                color: #ffffff; 
+                background-color: #000000; 
+                overflow: visible; 
+            }
+            .social-icons {
+                margin-top: 20px;
+            }
+            .social-icons a {     
+                display: inline-block;
+                margin-right: 10px;
+                color: #fff;
+                text-decoration: none;  
+                font-size: 20px;
+            }
+            .copyright {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 14px;
+                color: #999;
+            }
+            #section1{
+                position:relative;
+                height:3600px;
+                background:#DCDCDC;
+                display: flex;
+                flex-direction: column;
+            }
+            #center{
+                position: relative;
+                text-align: left;
+                max-width:800px;
+                left:25%;
+            }
+            #center img{
+                margin-top: 30px;
+                height:600px;
+                width:auto;
+                max-width:800px;
+            }
+            #center:first-child {        
+                margin-top: 70px; 
+            }
+            .big{
+                margin-top: 55px;
+                font-size:21px;
+                font-weight:bold;
+            }
+            .small{
+                font-size:17px;
+                line-height: 1.7;
+                letter-spacing: 1.7px; 
+            }
+            .button2{
+                display:inline-block;
+                position: relative;
+                top:80px;
+                left:300px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:#DCDCDCDC;
+                color:black;
+                border-radius: 10px;
+            }
+            .button2:hover{
+                background-color:#000;
+                color:#DCDCDCDC;
+                cursor:pointer;
+            }
+        </style>
+    </head>
+    <body>                               
+        <div class="container">
+            <div class="left">
+                <a href="主頁.html" id="home-link">                
+                    <img src="logo.jpg" class="logo"/>
+                </a>
+            </div>
+            <div class="right">
+                <a href="關於我們.html">
+                    <button class="button1">關於我們</button>
+                </a>
+                <a href="文章.html">
+                    <button class="button1">文章</button>
+                </a>
+                <a href="行動.html">
+                    <button class="button1">行動</button>
+                </a>               
+            </div>
+        </div>
+
+        <div id="section1">
+            <div id="center">
+                <div class="big">
+                    中鋼工會王慶宏理事長
+                </div>
+                <br>
+                <div class="small">
+                    11月20日，我們與中鋼運通工會合作舉辦一場對台大學生的社課講座。社課中，王慶宏理事長生動地描述了船員面臨的工作環境與各種因
+                    資方打壓而產生的問題，讓同學們能更全面地理解船員的困境，對於一些船員生活的細節刻劃更是栩栩如生。
+                </div>
+                <img src="行動2-1.jpg"/>
+
+                <br><br>
+                <div class="big">
+                    中鋼工會陳柏謙研究員
+                </div>
+                <br>
+                <div class="small">
+                    隨後，陳柏謙研究員說明了公司剝奪船員基本權利的手段以及中鋼運通對法律的曲解，並導致船員們工作權、生存權嚴重受損，於是發起
+                    抗爭的原因。
+                </div>
+                <img src="行動2-2.jpg"/>
+
+                <br><br>
+                <div class="big">
+                    台監青的講者
+                </div>
+                <br>
+                <div class="small">
+                    最後再以台灣監督企業青年行動的宣講做結尾，論述工學聯合的重要性與必要性，以及說明我們當前已經在展開的行動。讓大家可以了解到
+                    ，勞權議題、學生議題以及其他的社會議題相互結合的可行性與展望。
+                </div>
+                <img src="行動2-3.jpg"/>
+
+                <br><br>
+                <div class="big">
+                    我們的展望
+                </div>
+                <br>
+                <div class="small">
+                    期望未來能在更多學校宣講，也請大家關注 最近復社的臺大勞工社 NTU LaborClub，期待勞工社有更多關注勞權議題的社課。
+                </div>
+                <img src="行動2-4.jpg"/>
+
+                <a href="行動.html">
+                    <button class="button2">更多行動</button>
+                </a>
+            </div>
+        </div>
+
+        <div id="section-1">
+            <div class="footer">
+                <div class="footer-left">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/profile.php?id=61567452682767" 
+                        data-width="340" 
+                        data-height="300" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <h2>聯絡我們</h2>
+                    <p>台灣監督企業青年行動</p>
+                    <p>電話:0900560027</p>
+                    <p>郵件：taiwanjianduqiyeqingnianxingdo@gmail.com</p>
+        
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567452682767" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/tyi_cropwatch/" target="_blank">IG</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="copyright">
+                Copyright © 台灣監督企業青年行動
+            </div>
+        </div>                                              
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0">
+        </script>
+    </body>
+</html>
+
+ <!-- ---------------------------------- -->
+ 行動1北大
+
+ <!DOCTYPE html>
+<html lang="zh-TW">
+    <head>                               
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />     
+        <link rel="icon" href="logo.jpg" type="image/jpg">     
+        <title>行動|北大演講</title>
+        <style>
+            html{                                       
+                -webkit-text-size-adjust:100%;
+            }
+            .container {
+                display: flex;
+                width: 100%;  
+            }
+            .left {
+                flex: 1; 
+                max-width: 50%; 
+            }
+            .right {
+                flex: 1; 
+                max-width: 50%;
+            }
+            #home-link{
+                position: relative;
+                top: 1px;
+                left:200px;
+                width: 50%;
+                z-index:1000;                  
+                display:block;  
+                cursor:pointer;
+            }
+            .logo{
+                height: 120px !important;
+            }
+            .button1{
+                display:inline-block;
+                position: relative;
+                top:40px;
+                left:1px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:white;
+                color:black;
+                border-radius: 10px;
+            }
+            .button1:hover{
+                background-color:gray;
+                color:black;
+                cursor:pointer;
+            }
+            #section-1{
+                position:relative;
+                top: -40px;
+                background-color:#000000;
+                padding:20px;
+                height:auto;
+            }
+            .footer {                                     
+                display: flex;
+                padding: 20px 50px;
+                border-top: 1px solid #666;  
+                min-width: 800px;
+            }
+            .footer-left {
+                flex: 1 1 40%;          
+            }
+            .footer-left iframe {         
+                max-width: 400px;       
+                height: 400px;
+                border: none;
+            }
+            .footer-right {
+                flex: 1 1 50%; 
+                padding-left: 20px;
+                color: #ffffff; 
+                background-color: #000000; 
+                overflow: visible; 
+            }
+            .social-icons {
+                margin-top: 20px;
+            }
+            .social-icons a {     
+                display: inline-block;
+                margin-right: 10px;
+                color: #fff;
+                text-decoration: none;  
+                font-size: 20px;
+            }
+            .copyright {
+                text-align: center;
+                margin: 20px 0;
+                font-size: 14px;
+                color: #999;
+            }
+            #section1{
+                position:relative;
+                height:3600px;
+                background:#DCDCDC;
+                display: flex;
+                flex-direction: column;
+            }
+            #center{
+                position: relative;
+                text-align: left;
+                max-width:800px;
+                left:25%;
+            }
+            #center img{
+                margin-top: 30px;
+                height:600px;
+                width:auto;
+                max-width:800px;
+            }
+            #center:first-child {        
+                margin-top: 70px; 
+            }
+            .big{
+                margin-top: 55px;
+                font-size:21px;
+                font-weight:bold;
+            }
+            .small{
+                font-size:17px;
+                line-height: 1.7;
+                letter-spacing: 1.7px; 
+            }
+            .button2{
+                display:inline-block;
+                position: relative;
+                top:80px;
+                left:300px;
+                padding:10px 20px;
+                margin:5px;
+                font-size:20px;
+                font-weight:bold;
+                background-color:#DCDCDCDC;
+                color:black;
+                border-radius: 10px;
+            }
+            .button2:hover{
+                background-color:#000;
+                color:#DCDCDCDC;
+                cursor:pointer;
+            }
+        </style>
+    </head>
+    <body>                               
+        <div class="container">
+            <div class="left">
+                <a href="主頁.html" id="home-link">                
+                    <img src="logo.jpg" class="logo"/>
+                </a>
+            </div>
+            <div class="right">
+                <a href="關於我們.html">
+                    <button class="button1">關於我們</button>
+                </a>
+                <a href="文章.html">
+                    <button class="button1">文章</button>
+                </a>
+                <a href="行動.html">
+                    <button class="button1">行動</button>
+                </a>               
+            </div>
+        </div>
+
+        <div id="section1">
+            <div id="center">
+                <div class="big">
+                    中鋼工會蔡炎龍理事
+                </div>
+                <br>
+                <div class="small">
+                    10月24日，我們與中鋼運通工會合作舉辦一場對北大學生的校內宣講。活動中，蔡炎龍理事生動地描述了船員面臨的工作環境與各種因資方
+                    打壓而產生的問題，讓同學們能更全面地理解船員的困境。
+                </div>
+                <img src="行動1-1.jpg"/>
+
+                <br><br>
+                <div class="big">
+                    中鋼工會陳柏謙研究員
+                </div>
+                <br>
+                <div class="small">
+                    隨後，陳柏謙研究員說明了公司剝奪船員基本權利的手段以及中鋼運通對法律的曲解，並導致船員們工作權、生存權嚴重受損，於是發起抗爭的原因。
+                </div>
+                <img src="行動1-2.jpg"/>
+
+                <br><br>
+                <div class="big">
+                    台監青的講者
+                </div>
+                <br>
+                <div class="small">
+                    再來以台灣監督企業青年行動的宣講做結尾，論述工學聯合的重要性與必要性，以及說明我們當前已經在展開的行動。讓大家可以了解到，勞權議
+                    題與學生議題的相關以及互助的方法。再次感謝北大學生會的邀請。
+                </div>
+                <img src="行動1-3.jpg"/>
+
+                <br><br>
+                <div class="big">
+                    我們的展望
+                </div>
+                <br>
+                <div class="small">
+                    希望日後能在更多的學校舉辦講座或社課，讓更多學生能認識到當前的狀況與加入我們的行動。
+                </div>
+                <img src="行動1-4.jpg"/>
+
+                <a href="行動.html">
+                    <button class="button2">更多行動</button>
+                </a>
+            </div>
+        </div>
+
+        <div id="section-1">
+            <div class="footer">
+                <div class="footer-left">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/profile.php?id=61567452682767" 
+                        data-width="340" 
+                        data-height="300" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true" 
+                        data-hide-cover="false" 
+                        data-show-facepile="true">
+                    </div>
+                </div>
+                
+                <div class="footer-right">
+                    <h2>聯絡我們</h2>
+                    <p>台灣監督企業青年行動</p>
+                    <p>電話:0900560027</p>
+                    <p>郵件：taiwanjianduqiyeqingnianxingdo@gmail.com</p>
+        
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=61567452682767" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/tyi_cropwatch/" target="_blank">IG</a>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="copyright">
+                Copyright © 台灣監督企業青年行動
+            </div>
+        </div>                                              
+        <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0">
+        </script>
+    </body>
+</html>
+
+ <!-- ---------------------------------- -->
